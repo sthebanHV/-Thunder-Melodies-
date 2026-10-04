@@ -6,7 +6,7 @@ services:
     plan: free
     region: oregon
     rootDir: server
-    buildCommand: npm ci
+    buildCommand: npm install
     startCommand: npx tsx src/index.ts
     healthCheckPath: /api/v1/health
     envVars:
