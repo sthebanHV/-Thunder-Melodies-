@@ -5,7 +5,8 @@ services:
     runtime: node
     plan: free
     region: oregon
-    buildCommand: cd server && npm ci
+    rootDir: server
+    buildCommand: npm ci
     startCommand: npx tsx src/index.ts
     healthCheckPath: /api/v1/health
     envVars:
