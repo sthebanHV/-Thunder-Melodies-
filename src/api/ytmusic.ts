@@ -37,7 +37,7 @@ export interface YTPlaylist {
   tracks: YTSearchItem[];
 }
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? '';
+const BASE_URL = import.meta.env.VITE_API_URL ?? (import.meta.env.PROD ? 'https://diplomatic-insight-production-9f6a.up.railway.app' : '');
 
 async function getJSON<T>(url: string, signal?: AbortSignal): Promise<T> {
   const fullUrl = url.startsWith('http') ? url : `${BASE_URL}${url}`;
