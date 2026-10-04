@@ -8,3 +8,8 @@ ytm-service/__pycache__/
 
 .venv/
 __pycache__/
+
+.vercel
+.env
+.env.local
+.env.*.local
