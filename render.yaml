@@ -17,12 +17,12 @@ services:
         value: production
       - key: YTM_SERVICE_URL
         fromService:
-          type: worker
+          type: web
           name: wavely-ytm
           property: hostport
 
-  # 2. Python YTM Service (Background Worker - interno)
-  - type: worker
+  # 2. Python YTM Service (Web Service - interno, no público)
+  - type: web
     name: wavely-ytm
     runtime: python
     plan: free
@@ -38,3 +38,5 @@ services:
         value: es
       - key: YTM_LOCATION
         value: MX
+    # No exponer públicamente (solo interno)
+    autoDeploy: false
