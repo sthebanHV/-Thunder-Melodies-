@@ -19,7 +19,7 @@
     "dev:all": "concurrently -k -n web,api,ytm \"npm:dev\" \"npm:api:dev\" \"npm:ytm:dev\""
   },
   "dependencies": {
-    "@fastify/cors": "^9.0.0",
+    "@fastify/cors": "^10.0.0",
     "fastify": "^5.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
