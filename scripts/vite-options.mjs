@@ -56,7 +56,6 @@ export const localhostRedirect = {
   },
 };
 export const viteOptions = {
-  configFile: false,
   base: './',
   plugins: [react(), localhostRedirect],
   optimizeDeps: {noDiscovery: true, include: ['react', 'react-dom/client', 'react/jsx-runtime', 'react/jsx-dev-runtime', 'zustand'], esbuildOptions: {plugins: process.platform === 'win32' ? [windowsResolver] : []}},
