@@ -14,7 +14,7 @@ COPY ytm-service/ .
 
 FROM node:20-alpine
 WORKDIR /app
-RUN apk add --no-cache python3 py3-pip supervisor
+RUN apk add --no-cache python3 py3-pip
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/server ./server
 COPY --from=builder /app/node_modules ./node_modules
@@ -22,6 +22,7 @@ COPY --from=builder /app/package.json ./
 COPY --from=ytm /app /app/ytm-service
 RUN pip install --no-cache-dir -r ytm-service/requirements.txt
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 EXPOSE 3001 8001
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["/entrypoint.sh"]
