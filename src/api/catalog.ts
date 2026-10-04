@@ -9,7 +9,7 @@ export interface YTSearchItem {
   durationSec?: number;
 }
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? (import.meta.env.PROD ? 'https://diplomatic-insight-production-9f6a.up.railway.app' : '');
+const BASE_URL = import.meta.env.VITE_API_URL ?? '';
 
 async function getJSON<T>(url: string): Promise<T> {
   const fullUrl = url.startsWith('http') ? url : `${BASE_URL}${url}`;
