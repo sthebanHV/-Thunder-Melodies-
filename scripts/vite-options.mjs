@@ -58,9 +58,6 @@ export const localhostRedirect = {
 export const viteOptions = {
   configFile: false,
   base: './',
-  define: {
-    'import.meta.env.VITE_API_URL': JSON.stringify('https://diplomatic-insight-production-9f6a.up.railway.app'),
-  },
   plugins: [react(), localhostRedirect],
   optimizeDeps: {noDiscovery: true, include: ['react', 'react-dom/client', 'react/jsx-runtime', 'react/jsx-dev-runtime', 'zustand'], esbuildOptions: {plugins: process.platform === 'win32' ? [windowsResolver] : []}},
   server: {host: '127.0.0.1'},

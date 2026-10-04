@@ -1,4 +1,5 @@
 import type { Song } from '../domain/playlist/DoublyLinkedList';
+import { API_BASE_URL } from '../config/api';
 
 export interface YTSearchItem {
   videoId?: string | null;
@@ -37,7 +38,7 @@ export interface YTPlaylist {
   tracks: YTSearchItem[];
 }
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? '';
+const BASE_URL = API_BASE_URL;
 
 async function getJSON<T>(url: string, signal?: AbortSignal): Promise<T> {
   const fullUrl = url.startsWith('http') ? url : `${BASE_URL}${url}`;
