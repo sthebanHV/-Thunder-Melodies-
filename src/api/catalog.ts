@@ -9,10 +9,8 @@ export interface YTSearchItem {
   durationSec?: number;
 }
 
-const BASE_URL = 'https://diplomatic-insight-production-9f6a.up.railway.app';
-
 async function getJSON<T>(url: string): Promise<T> {
-  const fullUrl = url.startsWith('http') ? url : `${BASE_URL}${url}`;
+  const fullUrl = url.startsWith('http') ? url : 'https://diplomatic-insight-production-9f6a.up.railway.app' + url;
   const r = await fetch(fullUrl);
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   return (await r.json()) as T;

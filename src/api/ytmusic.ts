@@ -37,10 +37,8 @@ export interface YTPlaylist {
   tracks: YTSearchItem[];
 }
 
-const BASE_URL = 'https://diplomatic-insight-production-9f6a.up.railway.app';
-
 async function getJSON<T>(url: string, signal?: AbortSignal): Promise<T> {
-  const fullUrl = url.startsWith('http') ? url : `${BASE_URL}${url}`;
+  const fullUrl = url.startsWith('http') ? url : 'https://diplomatic-insight-production-9f6a.up.railway.app' + url;
   const r = await fetch(fullUrl, { signal });
   if (!r.ok) {
     const body = await r.json().catch(() => null) as { error?: { message?: string } } | null;
