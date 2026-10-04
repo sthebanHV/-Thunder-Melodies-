@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wavely — Thunder Melodies</title>
+    <script>
+      // Tema antes del primer render (sin parpadeo): dark por defecto.
+      try {
+        document.documentElement.setAttribute(
+          'data-theme',
+          localStorage.getItem('wavely:theme') === 'light' ? 'light' : 'dark',
+        );
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

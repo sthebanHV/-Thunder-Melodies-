@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.log
+headers_auth.json
+browser.json
+oauth.json
+ytm-service/__pycache__/
+
+.venv/
+__pycache__/

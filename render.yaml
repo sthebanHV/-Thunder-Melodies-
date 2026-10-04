@@ -1,0 +1,40 @@
+services:
+  # 1. Fastify API Gateway (Web Service - público)
+  - type: web
+    name: wavely-api
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: cd server && npm ci
+    startCommand: npx tsx src/index.ts
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_ENV
+        value: production
+      - key: YTM_SERVICE_URL
+        fromService:
+          type: worker
+          name: wavely-ytm
+          property: hostport
+
+  # 2. Python YTM Service (Background Worker - interno)
+  - type: worker
+    name: wavely-ytm
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r ytm-service/requirements.txt
+    startCommand: python ytm-service/app.py
+    envVars:
+      - key: PORT
+        value: 8001
+      - key: HOST
+        value: 0.0.0.0
+      - key: YTM_LANGUAGE
+        value: es
+      - key: YTM_LOCATION
+        value: MX

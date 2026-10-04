@@ -1,0 +1,10 @@
+{
+  "app": "Thunder Melodies",
+  "platform": "Windows x64",
+  "node": "24.19.0",
+  "python": "3.13.3",
+  "ytmusicapi": "1.12.3",
+  "launch": "INICIAR.cmd",
+  "offline_runtime": true,
+  "private_credentials_included": false
+}

@@ -1,0 +1,26 @@
+THUNDER MELODIES - PORTABLE PARA WINDOWS 64 BITS
+
+1. Extrae TODO el ZIP en una carpeta. No ejecutes los archivos desde dentro del ZIP.
+2. Abre la carpeta y haz doble clic en INICIAR.cmd.
+3. Se abrirá el navegador en http://localhost:8787.
+4. Mantén abierta la ventana de Thunder Melodies mientras escuchas música.
+5. Para cerrar, pulsa Ctrl+C en esa ventana o ejecuta DETENER.cmd.
+
+Incluye Node.js, Python, el catálogo y las dependencias de ejecución.
+No necesitas instalar Node.js, Python, npm ni pip. No requiere administrador.
+Requiere Windows 10/11 de 64 bits y un navegador actualizado.
+Internet es necesario para YouTube Music, videos, carátulas y las fuentes web.
+Los archivos de audio locales pueden reproducirse sin conexión.
+
+En Sonando, Ver video amplía el mismo reproductor. Puedes pausar,
+cambiar la posición de la canción, controlar el volumen y minimizar el video.
+Algunos videos bloquean la reproducción fuera de YouTube: en ese caso
+se muestra Abrir en YouTube, Reintentar y Siguiente.
+
+No incluye contraseñas, cookies, archivos de autenticación ni tu biblioteca personal.
+La cola, favoritos y archivos locales se guardan en cada navegador.
+El paquete incluye el código fuente y la interfaz ya compilada en dist/.
+Para desarrollo y pruebas, consulta README.md e instala las dependencias allí indicadas.
+
+Puertos locales: 8787 (web), 8788 (gateway), 8789 (YouTube Music).
+Si están ocupados, cierra la otra instancia antes de iniciar.
