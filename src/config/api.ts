@@ -1,1 +1,0 @@
-export const API_BASE_URL = 'https://diplomatic-insight-production-9f6a.up.railway.app';
